@@ -4,7 +4,7 @@ var Player = require('./jasmine_examples/Player');
 var Song = require('./jasmine_examples/Song');
 var GoogleBook = require('./dist/GoogleBook')
 var googleBookSvc = require ('./dist/GoogleBookService.js');
-const googleBookItemCatStub = require('./GoogleBookItem');
+const googleBookItemCatStub = require('./dist/GoogleBookItem');
 
 
 var song = new Song();
