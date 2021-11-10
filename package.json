@@ -12,10 +12,10 @@
   "author": "Marshay",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
+    "babel-polyfill": "^6.26.0",
     "jasmine": "^3.6.3",
-    "regenerator-runtime": "^0.13.7",
-    "axios": "^0.21.1"
-
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
