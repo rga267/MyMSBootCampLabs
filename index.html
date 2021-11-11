@@ -1,6 +1,5 @@
 <script src="bundle.js"></script>
 
-
 <html>
 
 <style type="text/css">
@@ -12,7 +11,7 @@
         <div>
             <h1>Google Books</h1>
         </div>
-        <form onsubmit="return fetchBook()">
+        <form onsubmit="return fetchBooks()">
             <div>
                 <input id="searchText" name="query" placeholder="Search" />
                 <button id="searchButton" type="submit">Search</button>
@@ -40,6 +39,8 @@
         
         const bookService = new myModule.googleBookSvc.GoogleBookService();
         let book = new myModule.GoogleBook();
+
+
      
     </script>
 </body>

@@ -1,3 +1,5 @@
+const x = require("regenerator-runtime");
+
 console.log("It's ALive!");
 
 var Player = require('./jasmine_examples/Player');
