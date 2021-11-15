@@ -20,7 +20,7 @@
         <div id="navigation">
             <button id="previous" onclick="prevBook()"> Previous </button>
             <button id="next" onclick="nextBook()"> Next </button>
-            <span>Page: <select id="pageNumber" onchange="pgchanged()"></select></span>
+            <span>Page: <select id="pageNumber" onchange="pageChanged()"></select></span>
         </div>
         <div id="searchResults" style="margin-top: 20px;">
             <img id="myThumbNail" src="" width="150px" style="float: left; margin-right: 10px;"></img>
@@ -56,17 +56,17 @@
         let changeBook = (num, bookService) => {
             currentPage = num;
 
-            let pageNumber = document.querySelector("pageNumber");
+            let pageNumber = document.getElementById("pageNumber");
             pageNumber.selectedIndex = num;
 
             book.googleBookItemMapper(bookService.fetchedResults.items[num]);
 
-            document.querySelector("title").innerText = book.title;
-            document.querySelector("description").innerText = book.description;
-            document.querySelector("year").innerText = book.publishedDate;
-            document.querySelector("thumbnail").setAttribute("src", book.thumbnail);
+            document.querySelector("#title").innerText = book.title;
+            document.querySelector("#description").innerText = book.description;
+            document.querySelector("#year").innerText = book.publishedDate;
+            document.querySelector("#myThumbNail").setAttribute("src", book.thumbnail);
 
-            let authors = document.querySelector("authors");
+            let authors = document.querySelector("#authors");
 
             authors.innerText = "";
 
@@ -94,8 +94,14 @@
 
         }
 
+        let pageChanged = () => {
+            let pageNumber = document.querySelector("#pageNumber");
+            currentPage = pageNumber.selectedIndex;
+            changeBook(currentPage, bookService);
+        }
+
         bookService.fetchBooks(get("query")).then((done) => {
-            let pageNumber = document.querySelector("pageNumber");
+            let pageNumber = document.querySelector("#pageNumber");
             let max = bookService.fetchedResults.items.length - 1;
             for(let i=0; i<=max; i++){
                 let opt = document.createElement('option');
